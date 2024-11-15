@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333; /* Dark text color for better contrast */
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            width: 90%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ff477e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #ff2a5a;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff477e; /* Change result text color to match the button */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Love Calculator</h1>
+    <input type="text" id="name1" placeholder="Your Name" required>
+    <input type="text" id="name2" placeholder="Partner's Name" required>
+    <button onclick="calculateLove()">Calculate Love</button>
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function calculateLove() {
+        const name1 = document.getElementById('name1').value;
+        const name2 = document.getElementById('name2').value;
+
+        if (name1 === "" || name2 === "") {
+            alert("Please enter both names.");
+            return;
+        }
+
+        // Simple random love score calculation
+        const score = Math.floor(Math.random() * 101);
+        document.getElementById('result').innerText = `${name1} and ${name2} have a love score of ${score}%!`;
+    }
+</script>
+
+</body>
+</html>
